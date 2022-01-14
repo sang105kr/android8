@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FourButton</string>
+    <string name="bnt1">홈페이지열기</string>
+    <string name="bnt2">119전화걸기</string>
+    <string name="bnt3">겔러리</string>
+    <string name="bnt4">종료</string>
+</resources>
