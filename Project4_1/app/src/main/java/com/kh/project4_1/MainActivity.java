@@ -19,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
     EditText[] editTexts = new EditText[2];  //피연자
     Button[] buttons = new Button[4];        //4칙연산
     TextView textView;                       //결과값
-
-    LinearLayout linearLayout;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         editTexts[0] = findViewById(R.id.Edit1);
         editTexts[1] = findViewById(R.id.Edit2);
 
-        linearLayout = findViewById((R.id.cont1));
 
         buttons[0] = findViewById(R.id.BtnAdd);
         buttons[1] = findViewById(R.id.BtnSub);
@@ -53,15 +50,15 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("add", op1);
                 Log.d("add", op2);
 
-                if(op1.trim().length() == 0 || op1.trim().length() == 0){
+                if(op1.trim().length() == 0 || op2.trim().length() == 0){
                     printMessage("피연산자가 누락되었습니다!");
                     return;
                 }
 
-                textView.setText( "덧셈결과 : " + String.valueOf(Double.valueOf(op1) + Double.valueOf(op2)));
+                textView.setText("덧셈결과 : " + String.valueOf(Double.valueOf(op1) + Double.valueOf(op2)));
             }
         });
-        
+
         //뺄셈
         buttons[1].setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
@@ -73,17 +70,17 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("sub", op1);
                 Log.d("sub", op2);
 
-                if(op1.trim().length() == 0 || op1.trim().length() == 0){
+                if(op1.trim().length() == 0 || op2.trim().length() == 0){
                     printMessage("피연산자가 누락되었습니다!");
                     return false;
                 }
 
                 textView.setText( "뺄셈결과 : " + String.valueOf(Double.valueOf(op1) - Double.valueOf(op2)));
-                
+
                 return true;
             }
-        });          
-        
+        });
+
         //곱셈
         buttons[2].setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -94,16 +91,16 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("mul", op1);
                 Log.d("mul", op2);
 
-                if(op1.trim().length() == 0 || op1.trim().length() == 0){
+                if(op1.trim().length() == 0 || op2.trim().length() == 0){
                     printMessage("피연산자가 누락되었습니다!");
                     return false;
                 }
 
                 textView.setText( "곱셈결과 : " + String.valueOf(Double.valueOf(op1) * Double.valueOf(op2)));
-                
+
                 return true;
             }
-        });          
+        });
         //나눗셈
         buttons[3].setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -114,21 +111,14 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("div", op1);
                 Log.d("div", op2);
 
-                if(op1.trim().length() == 0 || op1.trim().length() == 0){
+                if(op1.trim().length() == 0 || op2.trim().length() == 0){
                     printMessage("피연산자가 누락되었습니다!");
                     return false;
                 }
 
                 textView.setText( "나눗셈결과 : " + String.valueOf(Double.valueOf(op1) / Double.valueOf(op2)));
-                
-                return true;
-            }
-        });
 
-        linearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("layout", view.toString());
+                return true;
             }
         });
         

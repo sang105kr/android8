@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="선택을 시작하겠습니까?"
+        android:textSize="20sp" />
+
+    <Switch
+        android:id="@+id/btnSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="시작함" />
+
+    <LinearLayout
+        android:id="@+id/con1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="좋아하는 안드로이드 버전은?"
+            android:textSize="20sp"
+            android:visibility="visible" />
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/BtnR1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="파이(9.0)"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/BtnR2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Q(10.0)" />
+
+            <RadioButton
+                android:id="@+id/BtnR3"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="R(11.0)" />
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/pie" />
+
+        <Button
+            android:id="@+id/btnFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="종료" />
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="처음으로" />
+
+    </LinearLayout>
+
+</LinearLayout>
